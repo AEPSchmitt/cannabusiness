@@ -10,6 +10,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="title">HighGrow</h1>
       <h1>Missions</h1>
       <CardComponent sheetUrl={missions} />
       <hr/>

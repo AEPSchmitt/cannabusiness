@@ -3,6 +3,7 @@ import './CardComponent.css';
 
 const CardComponent = ({ sheetUrl }) => {
   const [cards, setCards] = useState([]);
+  const [originalCards, setOriginalCards] = useState([]);
   const [currentTitle, setCurrentTitle] = useState("");
   const [currentText, setCurrentText] = useState("");
 
@@ -20,7 +21,7 @@ const CardComponent = ({ sheetUrl }) => {
           title: row[Object.keys(row)[0]],
           text: row[Object.keys(row)[1]]
         }));
-
+        setOriginalCards(cards)
         setCards(cards);
       } catch (error) {
         console.error("Error fetching data from Google Sheets:", error);
@@ -64,11 +65,17 @@ const CardComponent = ({ sheetUrl }) => {
     drawRandomCard(cards);
   };
 
+  const handleResetButtonClick = () => {
+    setCards(originalCards);  // Reset the texts to the original data
+    drawRandomCard(originalCards);
+  };
+
   return (
     <div className="card">
       <h2 className="title">{currentTitle}</h2>
       <div className="text">{currentText}</div>
       <button onClick={handleButtonClick}>Draw Card</button>
+      <button onClick={handleResetButtonClick}>🔀 Deck</button>
     </div>
   );
 };
