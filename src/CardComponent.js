@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './CardComponent.css';
+import Swiper from './Swiper';
 
 const CardComponent = ({ sheetUrl }) => {
   const [cards, setCards] = useState([]);
@@ -76,6 +77,7 @@ const CardComponent = ({ sheetUrl }) => {
       <div className="text">{currentText}</div>
       <button onClick={handleButtonClick}>Draw Card</button>
       <button onClick={handleResetButtonClick}>🔀 Deck</button>
+      <Swiper/>
     </div>
   );
 };
