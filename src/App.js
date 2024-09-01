@@ -3,7 +3,7 @@ import './App.css';
 import './Modal.css';
 import CardComponent from './CardComponent';
 import Mission from './Mission';
-import logo from './logo.svg';
+import logo from './logo_white.svg';
 import bitcoin from './btc.svg';
 import bitcoin_off from './close.svg';
 import Incrementer from './Incrementer';
