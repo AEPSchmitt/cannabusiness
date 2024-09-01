@@ -58,6 +58,7 @@
 
 .mission-container {
   display: flex;
+  justify-content: space-around;
   margin-left: auto;
   margin-right: auto;
 }
@@ -69,4 +70,15 @@ h2 {
 p {
   margin-left: auto;
   margin-right: auto;
+}
+
+.modal-btn {
+  width: 75px;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  z-index: 5;
+}
+.modal-btn img {
+  width:75px;
 }

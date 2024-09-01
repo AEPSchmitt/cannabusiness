@@ -7,7 +7,7 @@ const CardComponent = ({ sheetUrl, colour }) => {
   const [drawn, addCard] = useState([]);
   const [originalCards, setOriginalCards] = useState();
   const [currentTitle, setCurrentTitle] = useState("");
-  const [currentText, setCurrentText] = useState("latest draw");
+  const [currentText, setCurrentText] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,27 +79,37 @@ const CardComponent = ({ sheetUrl, colour }) => {
 
   return (
     <div className={`card-container ${colour}`}>
-      <div className='last-drawn'>
-        <h2 className="title">{currentTitle}</h2>
-        <div className="text">{currentText}</div>
-      </div>
+      {currentTitle === "" ? (null) : (
+        <React.Fragment>
+          <p className='descriptor'>↓ last draw ↓</p>
+            <div className='last-drawn'>
+            <h2 className="title">{currentTitle}</h2>
+            <div className="text">{currentText}</div>
+          </div>
+        </React.Fragment>
+      )}
       <div className="btnContainer">
         <button className="drawBtn" onClick={handleButtonClick}>Draw Card</button>
         <button className="shuffleBtn" onClick={handleResetButtonClick}>🔀 Deck</button>
       </div>
-      <div className='drawn-cards' style={{ marginBottom: '20px' }}>
-        {drawn.length === 0 ? (
-          <p>draw history</p>
+      {drawn.length === 0 ? (
+          null
         ) : (
-          drawn.map((card, index) => (
-            <Card
-              key={index}
-              title={card.title}
-              text={card.text}
-            />
-          ))
+          <React.Fragment>
+            <p className='descriptor'>← draw history →</p>
+            <div className='drawn-cards' style={{ marginBottom: '20px' }}>
+              {
+                drawn.map((card, index) => (
+                  <Card
+                    key={index}
+                    title={card.title}
+                    text={card.text}
+                  />
+                )
+              )}
+            </div>
+          </React.Fragment>
         )}
-      </div>
     </div>
   );
 };
