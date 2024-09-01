@@ -19,8 +19,7 @@ const Incrementer = () => {
         <button className="inc-btn" onClick={incrementByOne}>+1</button>
       </div>
       <div style={{ margin: '10px 0', fontSize: '24px' }}>
-        {value} BTC
-        <img className="bitcoin" src="bitcoin.svg"/>
+        {value} <img className="bitcoin" src="bitcoin.svg"/>
       </div>
       <div>
         <button className="inc-btn" onClick={decrementByOne}>-1</button>

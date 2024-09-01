@@ -26,6 +26,7 @@ function App() {
       <h1 className='special-elite'>Powers</h1>
       <CardComponent sheetUrl={powers} />
       <hr/>
+      <h1 className='special-elite'>Wallet</h1>
       <Incrementer />
       <hr />
       <img src={logo} className="App-logo"/>
