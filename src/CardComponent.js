@@ -62,7 +62,7 @@ const CardComponent = ({ sheetUrl, colour }) => {
       setCards(newcardArray);
     } else {
       setCurrentTitle("Out of cards");
-      setCurrentText("");
+      setCurrentText("shuffle for more");
     }
   };
 

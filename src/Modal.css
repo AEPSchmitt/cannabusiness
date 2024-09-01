@@ -11,5 +11,6 @@
     background-color: rgba(153, 153, 153, 0.84);
   }
 .modal h1 {
-    font-size: 3em;
+    font-size: 7em;
+    margin-top: 0px;
 }
