@@ -77,8 +77,8 @@ const Mission = ({ sheetUrl, colour }) => {
       <h2 className="title">{currentTitle}</h2>
       <div className="text">{currentText}</div>
       <div className="btnContainer">
-        <button className="drawBtn" onClick={handleButtonClick}>Draw Mission</button>
-        <button className="shuffleBtn" onClick={handleResetButtonClick}>🔀 Deck</button>
+        <button className="drawBtn" onClick={handleButtonClick}>Draw</button>
+        <button className="shuffleBtn" onClick={handleResetButtonClick}>🔀 Shuffle</button>
       </div>
     </div>
   );

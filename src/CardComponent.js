@@ -89,8 +89,8 @@ const CardComponent = ({ sheetUrl, colour }) => {
         </React.Fragment>
       )}
       <div className="btnContainer">
-        <button className="drawBtn" onClick={handleButtonClick}>Draw Card</button>
-        <button className="shuffleBtn" onClick={handleResetButtonClick}>🔀 Deck</button>
+        <button className="drawBtn" onClick={handleButtonClick}>Draw</button>
+        <button className="shuffleBtn" onClick={handleResetButtonClick}>🔀 Shuffle</button>
       </div>
       {drawn.length === 0 ? (
           null
