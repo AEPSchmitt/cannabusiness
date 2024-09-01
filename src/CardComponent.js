@@ -54,8 +54,6 @@ const CardComponent = ({ sheetUrl, colour }) => {
     if (cardArray.length > 0) {
       const randomIndex = Math.floor(Math.random() * cardArray.length);
       const randomCard = cardArray[randomIndex];
-      const tit = randomCard.title;
-      const tex = randomCard.text;
       setCurrentTitle(randomCard.title);
       setCurrentText(randomCard.text);
       addCard([...drawn, randomCard]);
@@ -79,6 +77,10 @@ const CardComponent = ({ sheetUrl, colour }) => {
 
   return (
     <div className={`card-container ${colour}`}>
+      <div className="btnContainer">
+        <button className="drawBtn" onClick={handleButtonClick}>Draw</button>
+        <button className="shuffleBtn" onClick={handleResetButtonClick}>🔀 Shuffle</button>
+      </div>
       {currentTitle === "" ? (null) : (
         <React.Fragment>
           <p className='descriptor'>↓ last draw ↓</p>
@@ -88,10 +90,6 @@ const CardComponent = ({ sheetUrl, colour }) => {
           </div>
         </React.Fragment>
       )}
-      <div className="btnContainer">
-        <button className="drawBtn" onClick={handleButtonClick}>Draw</button>
-        <button className="shuffleBtn" onClick={handleResetButtonClick}>🔀 Shuffle</button>
-      </div>
       {drawn.length === 0 ? (
           null
         ) : (

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import './Mission.css';
+import Card from './Card';
 
 const Mission = ({ sheetUrl, colour }) => {
   const [cards, setCards] = useState([]);
+  const [drawn, addCard] = useState([]);
   const [originalCards, setOriginalCards] = useState();
   const [currentTitle, setCurrentTitle] = useState("");
   const [currentText, setCurrentText] = useState("");
@@ -47,19 +49,17 @@ const Mission = ({ sheetUrl, colour }) => {
     return jsonData;
   };
 
-  const drawRandomCard = (textArray) => {
-    console.log(textArray);
-    if (textArray.length > 0) {
-      const randomIndex = Math.floor(Math.random() * textArray.length);
-      const randomText = textArray[randomIndex];
-      setCurrentTitle(randomText.title);
-      setCurrentText(randomText.text);
+  const drawRandomCard = (cardArray) => {
+    console.log(cardArray);
+    if (cardArray.length > 0) {
+      const randomIndex = Math.floor(Math.random() * cardArray.length);
+      const randomCard = cardArray[randomIndex];
+      addCard([...drawn, randomCard]);
       // Remove the selected text from the list
-      const newTextArray = textArray.filter((_, index) => index !== randomIndex);
-      setCards(newTextArray);
+      const newcardArray = cardArray.filter((_, index) => index !== randomIndex);
+      setCards(newcardArray);
     } else {
       setCurrentTitle("Out of cards");
-      setCurrentText("");
     }
   };
 
@@ -74,12 +74,41 @@ const Mission = ({ sheetUrl, colour }) => {
 
   return (
     <div className={`mission ${colour}`}>
-      <h2 className="title">{currentTitle}</h2>
-      <div className="text">{currentText}</div>
+
       <div className="btnContainer">
         <button className="drawBtn" onClick={handleButtonClick}>Draw</button>
         <button className="shuffleBtn" onClick={handleResetButtonClick}>🔀 Shuffle</button>
       </div>
+      {drawn.length === 0 ? (
+          null
+        ) : (
+          <React.Fragment>
+            <div className='drawn-cards' style={{ marginBottom: '20px' }}>
+              {
+                drawn.map((card, index) => (
+                  <Card
+                    key={index}
+                    title={card.title}
+                    text={card.text}
+                  />
+                )
+              )}
+            </div>
+          </React.Fragment>
+        )}
+      {drawn.length < 2 ? (
+        null
+      ) : (
+        <p className="descriptor">← →</p>)}
+      
+      {cards.length === 0 ? (
+
+        <React.Fragment>
+          <h2 className="title"> Out of cards</h2>
+          <p className="descriptor">shuffle for more</p>
+        </React.Fragment>
+        ) : (null)
+        }
     </div>
   );
 };
