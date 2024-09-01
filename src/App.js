@@ -5,7 +5,7 @@ import CardComponent from './CardComponent';
 import Mission from './Mission';
 import logo from './logo.svg';
 import bitcoin from './btc.svg';
-import bitcoin_off from './btc_close.svg';
+import bitcoin_off from './close.svg';
 import Incrementer from './Incrementer';
 
 function App() {
@@ -45,7 +45,6 @@ function App() {
         <img src={ modalActive ? (bitcoin_off) : (bitcoin)
           }/>
       </div>
-      <hr />
       <img src={logo} className="App-logo"/>
     </div>
   );
