@@ -4,6 +4,7 @@
 .App {
   text-align: center;
   overflow-x: hidden;
+  background-color: #082;
 }
 
 .App-logo {
@@ -13,7 +14,7 @@
   max-height: 200px;
 }
 .main-title {
-  color: #082;
+  color: rgb(255, 255, 255);
   font-family: "Matemasie", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -63,4 +64,9 @@
 
 h2 {
   color:#E03C2B;
+}
+
+p {
+  margin-left: auto;
+  margin-right: auto;
 }

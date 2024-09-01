@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import './CardComponent.css';
-import Swiper from './Swiper';
+import './Mission.css';
 
-const Missions = ({ sheetUrl }) => {
+const Mission = ({ sheetUrl, colour }) => {
   const [cards, setCards] = useState([]);
   const [originalCards, setOriginalCards] = useState();
   const [currentTitle, setCurrentTitle] = useState("");
@@ -64,7 +63,7 @@ const Missions = ({ sheetUrl }) => {
     }
   };
 
-  const drawMission = (color) => {
+  const handleButtonClick = () => {
     drawRandomCard(cards);
   };
 
@@ -74,25 +73,15 @@ const Missions = ({ sheetUrl }) => {
   };
 
   return (
-    <div className="missions">
-      <div className="green card">
-        <h2 className="title">Green</h2>
-        <div className="text">Mission</div>
-        <button onClick={drawMission} className="green">Draw</button>
-      </div>
-      <div className="yellow card">
-        <h2 className="title">Yellow</h2>
-        <div className="text">Mission</div>
-        <button onClick={drawMission} className="yellow">Draw</button>
-        
-      </div>
-      <div className="red card">
-        <h2 className="title">Red</h2>
-        <div className="text">Mission</div>
-        <button onClick={drawMission} className="red">Draw</button>
+    <div className={`mission ${colour}`}>
+      <h2 className="title">{currentTitle}</h2>
+      <div className="text">{currentText}</div>
+      <div className="btnContainer">
+        <button className="drawBtn" onClick={handleButtonClick}>Draw Mission</button>
+        <button className="shuffleBtn" onClick={handleResetButtonClick}>🔀 Deck</button>
       </div>
     </div>
   );
 };
 
-export default Missions;
+export default Mission;

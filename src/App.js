@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import CardComponent from './CardComponent';
-import Missions from './Missions';
+import Mission from './Mission';
 import logo from './logo.svg';
 import Incrementer from './Incrementer';
 
@@ -13,20 +13,20 @@ function App() {
   return (
     <div className="App">
       <h1 className="main-title">HighGrow</h1>
-      <h1 className='special-elite'>Missions</h1>
+      <h1>Missions</h1>
       <div className="mission-container">
-        <CardComponent colour="green-mission" sheetUrl={missions} />
-        <CardComponent colour="yellow-mission" sheetUrl={missions} />
-        <CardComponent colour="red-mission" sheetUrl={missions} />
+        <Mission colour="green-mission" sheetUrl={missions} />
+        <Mission colour="yellow-mission" sheetUrl={missions} />
+        <Mission colour="red-mission" sheetUrl={missions} />
       </div>
       <hr/>
-      <h1 className='special-elite'>Events</h1>
+      <h1>Events</h1>
       <CardComponent sheetUrl={events} />
       <hr/>
-      <h1 className='special-elite'>Powers</h1>
+      <h1>Powers</h1>
       <CardComponent sheetUrl={powers} />
       <hr/>
-      <h1 className='special-elite'>Wallet</h1>
+      <h1>Wallet</h1>
       <Incrementer />
       <hr />
       <img src={logo} className="App-logo"/>

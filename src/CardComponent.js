@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import './CardComponent.css';
-import Swiper from './Swiper';
+import Card from './Card';
 
 const CardComponent = ({ sheetUrl, colour }) => {
   const [cards, setCards] = useState([]);
+  const [drawn, addCard] = useState([]);
   const [originalCards, setOriginalCards] = useState();
   const [currentTitle, setCurrentTitle] = useState("");
-  const [currentText, setCurrentText] = useState("");
+  const [currentText, setCurrentText] = useState("latest draw");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,16 +49,19 @@ const CardComponent = ({ sheetUrl, colour }) => {
     return jsonData;
   };
 
-  const drawRandomCard = (textArray) => {
-    console.log(textArray);
-    if (textArray.length > 0) {
-      const randomIndex = Math.floor(Math.random() * textArray.length);
-      const randomText = textArray[randomIndex];
-      setCurrentTitle(randomText.title);
-      setCurrentText(randomText.text);
+  const drawRandomCard = (cardArray) => {
+    console.log(cardArray);
+    if (cardArray.length > 0) {
+      const randomIndex = Math.floor(Math.random() * cardArray.length);
+      const randomCard = cardArray[randomIndex];
+      const tit = randomCard.title;
+      const tex = randomCard.text;
+      setCurrentTitle(randomCard.title);
+      setCurrentText(randomCard.text);
+      addCard([...drawn, randomCard]);
       // Remove the selected text from the list
-      const newTextArray = textArray.filter((_, index) => index !== randomIndex);
-      setCards(newTextArray);
+      const newcardArray = cardArray.filter((_, index) => index !== randomIndex);
+      setCards(newcardArray);
     } else {
       setCurrentTitle("Out of cards");
       setCurrentText("");
@@ -74,12 +78,27 @@ const CardComponent = ({ sheetUrl, colour }) => {
   };
 
   return (
-    <div className={`card ${colour}`}>
-      <h2 className="title">{currentTitle}</h2>
-      <div className="text">{currentText}</div>
+    <div className={`card-container ${colour}`}>
+      <div className='last-drawn'>
+        <h2 className="title">{currentTitle}</h2>
+        <div className="text">{currentText}</div>
+      </div>
       <div className="btnContainer">
         <button className="drawBtn" onClick={handleButtonClick}>Draw Card</button>
         <button className="shuffleBtn" onClick={handleResetButtonClick}>🔀 Deck</button>
+      </div>
+      <div className='drawn-cards' style={{ marginBottom: '20px' }}>
+        {drawn.length === 0 ? (
+          <p>draw history</p>
+        ) : (
+          drawn.map((card, index) => (
+            <Card
+              key={index}
+              title={card.title}
+              text={card.text}
+            />
+          ))
+        )}
       </div>
     </div>
   );

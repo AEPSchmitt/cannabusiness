@@ -13,15 +13,15 @@ const Incrementer = () => {
 
   return (
     <div style={{ display: 'inline-block', textAlign: 'center', fontFamily: 'Arial' }}>
-      <div>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
         <button className="inc-btn" onClick={incrementByFive}>+5</button>
         <br />
         <button className="inc-btn" onClick={incrementByOne}>+1</button>
       </div>
-      <div style={{ margin: '10px 0', fontSize: '24px' }}>
+      <div style={{ margin: '10px 0', fontSize: '32px', marginTop: '0.2em', fontSize: '3em', marginBottom: '0.5em'}}>
         {value} <img className="bitcoin" src="bitcoin.svg"/>
       </div>
-      <div>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
         <button className="inc-btn" onClick={decrementByOne}>-1</button>
         <br />
         <button className="inc-btn" onClick={decrementByFive}>-5</button>

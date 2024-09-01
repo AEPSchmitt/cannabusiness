@@ -1,15 +1,40 @@
-/* Missions.css */
+/* Mission.css */
 
-.card {
+.mission {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
     max-width: 300px;
     text-align: center;
-    margin: 20px auto;
+    margin: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height:320px;
+    min-width:260px;
+    position: relative;
   }
-  
+
+  .green-mission {
+    border: 4px solid #36c000;
+  }
+  .yellow-mission {
+    border: 4px solid #ffef00;
+  }
+  .red-mission {
+    border: 4px solid #d60000;
+  }
+
+.mission-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.mission-container .btnContainer{
+  position: absolute;
+}
+.mission-container .card {
+  display: inline-block;
+  margin: 4px;
+}
   .title {
     margin-bottom: 10px;
     font-size: 24px;
@@ -19,17 +44,6 @@
   .text {
     margin-bottom: 20px;
     font-size: 18px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #082;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 0.25em;
-    display: block;
   }
   
   button:active {
