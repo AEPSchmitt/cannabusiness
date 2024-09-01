@@ -3,6 +3,7 @@
 
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -54,6 +55,11 @@
   font-style: normal;
 }
 
+.mission-container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 h2 {
   color:#E03C2B;

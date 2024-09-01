@@ -1,0 +1,10 @@
+.bitcoin {
+    float: right;
+    position: absolute;
+    right: 15%;
+    transform: translateY(-25%);
+}
+
+.inc-btn{
+    background-color: #f7931a;
+}
