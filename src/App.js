@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="main-title">Cannabusiness</h1>
-      <div className="wallets" style={{display : walletsActive ? 'block' : 'none'}}>
+      <div className="wallets" style={{display : walletsActive ? 'flex' : 'none'}}>
         <Incrementer player="player-red" />
         <Incrementer player="player-blue" />
         <Incrementer player="player-orange" />
