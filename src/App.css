@@ -24,6 +24,7 @@ html {
   font-style: normal;
   font-size: 3rem;
   margin-top: 0;
+  margin-bottom: 1.5em;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -15,16 +15,20 @@ function App() {
   const events = "https://docs.google.com/spreadsheets/d/1LzdsgI1kk0HnYvG2oo-8weQrI1p0vFKMxF-Ur4xlLes/pub?gid=1888771602&single=true&output=csv";
   const powers = "https://docs.google.com/spreadsheets/d/1LzdsgI1kk0HnYvG2oo-8weQrI1p0vFKMxF-Ur4xlLes/pub?gid=470410523&single=true&output=csv";
   const [modalActive, setModalStatus] = useState(false);
+  const [walletsActive, setWalletsStatus] = useState(true);
 
   const toggleModal = () => {
     setModalStatus(!modalActive);
   };
 
+  const toggleWallets = () => {
+    setWalletsStatus(!walletsActive);
+  };
+
   return (
     <div className="App">
       <h1 className="main-title">Cannabusiness</h1>
-      <hr/>
-      <div className="wallets">
+      <div className="wallets" style={{display : walletsActive ? 'block' : 'none'}}>
         <Incrementer player="player-red" />
         <Incrementer player="player-blue" />
         <Incrementer player="player-orange" />
@@ -32,19 +36,15 @@ function App() {
         <Incrementer player="player-black" />
         <Incrementer player="player-green" />
       </div>
-      <hr/>
       <div className="page">
         <div className="left">
           <h1>Events</h1>
           <CardComponent sheetUrl={events} />
-          <hr/>
-          
         </div>
         <div className="right">
           
           <h1>Powers</h1>
           <CardComponent sheetUrl={powers} type="powers"/>
-          <hr/>
         </div>
       </div>
         {
@@ -58,7 +58,7 @@ function App() {
             </div>
           }
       
-      <div className='modal-btn'>
+      <div className='modal-btn' onClick={toggleWallets}>
         <img className="qrcode" src={qrcode}/>
       </div>
       <img src={logo} className="App-logo"/>
