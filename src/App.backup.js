@@ -23,45 +23,31 @@ function App() {
     <div className="App">
       <h1 className="main-title">Cannabusiness</h1>
       <hr/>
-      <div className="wallets">
-        <Incrementer player="player-red" />
-        <Incrementer player="player-blue" />
-        <Incrementer player="player-orange" />
-        <Incrementer player="player-yellow" />
-        <Incrementer player="player-black" />
-        <Incrementer player="player-green" />
+      /*<h1>Missions</h1>
+      <div className="mission-container">
+        <Mission colour="green-mission" sheetUrl={missions} />
+        <Mission colour="yellow-mission" sheetUrl={missions} />
+        <Mission colour="red-mission" sheetUrl={missions} />
       </div>
+      <hr/>*/
+      <h1>Events</h1>
+      <CardComponent sheetUrl={events} />
       <hr/>
-      <div className="page">
-        <div className="left">
-          <h1>Events</h1>
-          <CardComponent sheetUrl={events} />
-          <hr/>
-          
+      <h1>Powers</h1>
+      <CardComponent sheetUrl={powers} />
+      <hr/>
+      {
+        <div className="modal" style={{display : modalActive ? 'block' : 'none'}}>
+          <h1>Wallet</h1>
+          <Incrementer />
         </div>
-        <div className="right">
-          
-          <h1>Powers</h1>
-          <CardComponent sheetUrl={powers} type="powers"/>
-          <hr/>
-        </div>
-      </div>
-        {
-            <div className="modal" style={{display : modalActive ? 'block' : 'none'}}>
-              <h1>Wallets</h1>
-              <Incrementer />
-              <Incrementer />
-              <Incrementer />
-              <Incrementer />
-              <Incrementer />
-            </div>
-          }
-      
+      }
       <div className='modal-btn' onClick={toggleModal}>
         <img src={ modalActive ? (bitcoin_off) : (bitcoin)
           }/>
       </div>
       <img src={logo} className="App-logo"/>
+      <Weed/>
     </div>
   );
 }

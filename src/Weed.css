@@ -1,0 +1,26 @@
+.weed-btn{
+    font-weight: bold;
+    font-size:1em;
+    border: none;
+    display: inline-block;
+}
+.inc-weed{
+    vertical-align: middle;
+    height: 50px;
+    width: 50px;
+}
+.weedlogo {
+    height: 1.5em;
+    transform: translateY(20%);
+}
+.weed {
+   height: 100%;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: 1.5em;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #0000004f;
+  color: wheat;
+}

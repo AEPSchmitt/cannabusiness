@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import './CardComponent.css';
 import Card from './Card';
 
-const CardComponent = ({ sheetUrl, colour }) => {
+const CardComponent = ({ sheetUrl, type }) => {
   const [cards, setCards] = useState([]);
   const [drawn, addCard] = useState([]);
   const [originalCards, setOriginalCards] = useState();
   const [currentTitle, setCurrentTitle] = useState("");
   const [currentText, setCurrentText] = useState("");
-
+  const [activeHistory, setHistoryActive] = useState(false);
+ 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -35,6 +36,10 @@ const CardComponent = ({ sheetUrl, colour }) => {
     fetchData();
   }, [sheetUrl]);
 
+  const toggleHistory = () => {
+    setHistoryActive(!activeHistory)
+  }
+
   const parseCSVtoJSON = (csvData) => {
     const rows = csvData.split("\n");
     const headers = rows[0].split(",").map(header => header.trim());
@@ -50,8 +55,10 @@ const CardComponent = ({ sheetUrl, colour }) => {
   };
 
   const drawRandomCard = (cardArray) => {
-    console.log(cardArray);
     if (cardArray.length > 0) {
+      if (type === "powers"){
+        setHistoryActive(true)
+      }
       const randomIndex = Math.floor(Math.random() * cardArray.length);
       const randomCard = cardArray[randomIndex];
       setCurrentTitle(randomCard.title);
@@ -76,12 +83,12 @@ const CardComponent = ({ sheetUrl, colour }) => {
   };
 
   return (
-    <div className={`card-container ${colour}`}>
+    <div className={`card-container`}>
       <div className="btnContainer">
         <button className="drawBtn" onClick={handleButtonClick}>Draw</button>
         <button className="shuffleBtn" onClick={handleResetButtonClick}>🔀 Shuffle</button>
       </div>
-      {currentTitle === "" ? (null) : (
+      {currentTitle === "" || type == "powers" ? (null) : (
         <React.Fragment>
           <p className='descriptor'>↓ last draw ↓</p>
             <div className='last-drawn'>
@@ -94,8 +101,8 @@ const CardComponent = ({ sheetUrl, colour }) => {
           null
         ) : (
           <React.Fragment>
-            <p className='descriptor'>← draw history →</p>
-            <div className='drawn-cards' style={{ marginBottom: '20px' }}>
+            <p className='descriptor history' onClick={toggleHistory}>← draw history →</p>
+            <div className='drawn-cards' style={ activeHistory ? { display:'flex'} : {display:'none'}}>
               {
                 drawn.map((card, index) => (
                   <Card

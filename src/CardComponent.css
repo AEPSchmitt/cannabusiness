@@ -15,10 +15,10 @@
   }
 
   .card-container {
-    border: 2px solid #000;
+    /*border: 2px solid #000;*/
     border-radius: 8px;
     padding: 20px;
-    max-width: 300px;
+    max-width: 80%;
     text-align: center;
     margin: auto auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -29,7 +29,9 @@
 .drawn-cards {
   margin-bottom: 20px;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap-reverse;
+  flex-direction: row-reverse;
+  justify-content: center;
   overflow-x: auto;
   margin-bottom: 20px;
   border: 1px solid white;
@@ -37,13 +39,23 @@
   padding-left: 1em;
   padding-right: 1em;
   margin-top: 0.5em;
+  margin-bottom:20px;
 }
 .drawn-cards .card {
   min-height: auto !important;
 }
+.history {
+  cursor: pointer;
+}
+.history:hover{
+  color:black;
+}
 .last-drawn{
   border: 1px solid white;
   border-radius: 8px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .descriptor {
   color: white;

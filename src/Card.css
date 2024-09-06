@@ -1,0 +1,36 @@
+.player-blue {
+    background-color: blue;
+    color: white;
+}
+
+.player-orange {
+    background-color: rgb(255, 115, 0);
+}
+
+.player-yellow {
+    background-color: yellow;
+}
+
+.player-black {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.61);
+}
+
+.player-red {
+    background-color: red;
+}
+.player-red h2 {
+    color: white;
+}
+
+.player-pink h2 {
+    color: white;
+}
+
+.player-green {
+    background-color: rgba(43, 255, 0, 0.61);
+}
+
+.player-pink {
+    background-color: rgb(204, 0, 255);
+}

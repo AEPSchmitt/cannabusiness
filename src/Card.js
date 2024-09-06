@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import './Card.css';
 
 const Card = ({ title, text }) => {
-  const [isMarked, setIsMarked] = useState(false);
+  const [player, setPlayer] = useState(0);
+  let players = ['player-none', 'player-blue', 'player-orange', 'player-yellow', 'player-black', 'player-red', 'player-green', 'player-pink']
 
-  const toggleClass = () => {
-    setIsMarked(!isMarked);
+  const changePlayer = () => {
+    setPlayer((player+1) % players.length)
   };
 
   return (
-    <div className='card' onClick={toggleClass} style={{
+    <div className={`card ${players[player]}`} onClick={changePlayer} style={{
       padding: '20px',
-      backgroundColor: isMarked ? '#d3d3d38a' : '#d3d3d300',
       textAlign: 'center',
       cursor: 'pointer',
     }}>

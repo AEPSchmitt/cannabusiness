@@ -94,3 +94,18 @@ p {
 .modal-btn img {
   width:75px;
 }
+
+.page {
+  vertical-align:top;
+}
+
+.page .left {
+  width:50%;
+  display: inline-block;
+  vertical-align:top;
+}
+.page .right {
+  width:50%;
+  display: inline-block;
+  vertical-align:top;
+}

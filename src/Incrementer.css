@@ -9,3 +9,51 @@
     font-size:1em;
     border: none;
 }
+.wallets {
+    color:white;
+}
+.wallets h1 {
+    color:black;
+}
+.wallets .player-red {
+    border: 8px solid red;
+    border-radius: 1.5em;
+    padding: 1em;
+}
+
+.wallets .player-orange {
+    border: 8px solid orange;
+    border-radius: 1.5em;
+    padding: 1em;
+}
+
+.wallets .player-yellow {
+    border: 8px solid yellow;
+    border-radius: 1.5em;
+    padding: 1em;
+}
+
+.wallets .player-blue {
+    border: 8px solid blue;
+    border-radius: 1.5em;
+    padding: 1em;
+}
+
+.wallets .player-green {
+    border: 8px solid green;
+    border-radius: 1.5em;
+    padding: 1em;
+}
+
+.wallets .player-black {
+    border: 8px solid black;
+    border-radius: 1.5em;
+    padding: 1em;
+}
+
+
+.wallet {
+    background-color: #f000;
+    margin-left:1em;
+    margin-right:1em;
+}
