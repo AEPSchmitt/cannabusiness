@@ -106,7 +106,7 @@ p {
   cursor: none;
 }
 .wallets {
-  overflow-x: scroll;
+  overflow-x: auto;
   display: flex;
   justify-content: center;
 }
@@ -118,12 +118,12 @@ p {
 }
 
 .page .left {
-  width:30%;
+  width:20%;
   display: inline-block;
   vertical-align:top;
 }
 .page .right {
-  width:70%;
+  width:80%;
   display: inline-block;
   vertical-align:top;
 }
