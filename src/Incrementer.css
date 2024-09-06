@@ -47,7 +47,7 @@
 }
 
 .wallets .player-green {
-    border: 8px solid green;
+    border: 8px solid #00e300;
     border-radius: 1.5em;
     padding: 1em;
 }
@@ -72,6 +72,7 @@
 
 .player-yellow div .inc-btn {
     background-color: yellow;
+    color:black;
 }
 
 .player-blue div .inc-btn {
@@ -79,7 +80,7 @@
 }
 
 .player-green div .inc-btn {
-    background-color: green;
+    background-color: #00e300;
 }
 
 .player-pink div .inc-btn {
