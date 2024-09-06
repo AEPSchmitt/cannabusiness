@@ -6,6 +6,7 @@ import Mission from './Mission';
 import Weed from './Weed';
 import logo from './logo_white.svg';
 import bitcoin from './btc.svg';
+import qrcode from './qrcode.png';
 import bitcoin_off from './close.svg';
 import Incrementer from './Incrementer';
 
@@ -57,9 +58,8 @@ function App() {
             </div>
           }
       
-      <div className='modal-btn' onClick={toggleModal}>
-        <img src={ modalActive ? (bitcoin_off) : (bitcoin)
-          }/>
+      <div className='modal-btn'>
+        <img className="qrcode" src={qrcode}/>
       </div>
       <img src={logo} className="App-logo"/>
     </div>

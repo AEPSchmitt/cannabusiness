@@ -30,7 +30,9 @@ html {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.App-logo:hover{
+  animation-duration: 1s !important;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -95,7 +97,13 @@ p {
 .modal-btn img {
   width:75px;
 }
-
+.qrcode{
+  transition: transform .2s ease-in-out;
+}
+.qrcode:hover{
+  transform:scale(2);
+  cursor: none;
+}
 .page {
   vertical-align:top;
 }
