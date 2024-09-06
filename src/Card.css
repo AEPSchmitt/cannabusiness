@@ -34,3 +34,12 @@
 .player-pink {
     background-color: rgb(204, 0, 255);
 }
+
+.closer {
+    float: right;
+    font-weight: bold;
+    z-index:99;
+}
+.closer:hover{
+    filter:invert();
+}

@@ -101,7 +101,7 @@ const CardComponent = ({ sheetUrl, type }) => {
           null
         ) : (
           <React.Fragment>
-            <p className='descriptor history' onClick={toggleHistory}>← draw history →</p>
+            <p className='descriptor history' onClick={toggleHistory}>draw history {activeHistory ? ("▲") : ("▼")}</p>
             <div className='drawn-cards' style={ activeHistory ? { display:'flex'} : {display:'none'}}>
               {
                 drawn.map((card, index) => (

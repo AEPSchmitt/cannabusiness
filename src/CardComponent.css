@@ -46,6 +46,7 @@
 }
 .history {
   cursor: pointer;
+  font-size: 1.2em !important;
 }
 .history:hover{
   color:black;

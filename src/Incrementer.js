@@ -17,7 +17,7 @@ const Incrementer = ({player}) => {
       <div style={{display: 'flex', flexDirection: 'column'}}>
         <button className="inc-btn" onClick={incrementByOne}>+1</button>
       </div>
-      <div style={{ margin: '10px 0', fontSize: '32px', marginTop: '0.2em', fontSize: '3em', marginBottom: '0.5em'}}>
+      <div style={{ margin: '10px 0', fontSize: '32px', marginTop: '0.2em', fontSize: '2em', marginBottom: '0.5em'}}>
         {value} <img className="bitcoin" src="bitcoin.svg"/>
       </div>
       <div style={{display: 'flex', flexDirection: 'column'}}>

@@ -15,6 +15,7 @@
 .wallets h1 {
     color:black;
 }
+
 .wallets .player-red {
     border: 8px solid red;
     border-radius: 1.5em;
@@ -33,6 +34,12 @@
     padding: 1em;
 }
 
+.wallets .player-black {
+    border: 8px solid rgb(0, 0, 0);
+    border-radius: 1.5em;
+    padding: 1em;
+}
+
 .wallets .player-blue {
     border: 8px solid blue;
     border-radius: 1.5em;
@@ -45,10 +52,38 @@
     padding: 1em;
 }
 
-.wallets .player-black {
-    border: 8px solid black;
+.wallets .player-pink {
+    border: 8px solid rgb(195, 0, 255);
     border-radius: 1.5em;
     padding: 1em;
+}
+
+.player-black div .inc-btn {
+    background-color: black;
+}
+
+.player-red div .inc-btn {
+    background-color: red;
+}
+
+.player-orange div .inc-btn {
+    background-color: orange;
+}
+
+.player-yellow div .inc-btn {
+    background-color: yellow;
+}
+
+.player-blue div .inc-btn {
+    background-color: blue;
+}
+
+.player-green div .inc-btn {
+    background-color: green;
+}
+
+.player-pink div .inc-btn {
+    background-color: rgb(195, 0, 255);;
 }
 
 
